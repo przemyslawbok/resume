@@ -1,0 +1,25 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "typescript.preferences.quoteStyle": "single",
+  "editor.matchBrackets": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "prettier.singleQuote": true,
+  "cSpell.ignoreWords": [
+    "Signup",
+    "appspot",
+    "autofix",
+    "firebaseapp",
+    "firestore",
+    "kebabcase",
+    "mantine",
+    "paren",
+    "parens",
+    "wesbos"
+  ],
+  "prettier.jsxSingleQuote": true
+}
