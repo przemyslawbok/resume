@@ -1,7 +1,9 @@
+import { LogInButton, Wrapper } from 'components';
+
 export default function Home() {
   return (
-    <div>
-      
-    </div>
-  )
+    <Wrapper>
+      <LogInButton />
+    </Wrapper>
+  );
 }

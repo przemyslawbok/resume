@@ -3,12 +3,15 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
+import { UserContext } from 'utils/contexts/UserContext';
+import { useUserData } from 'utils/hooks/useUserData';
 
 export default function App(props: AppProps) {
+  const userData = useUserData();
   const { Component, pageProps } = props;
 
   return (
-    <>
+    <UserContext.Provider value={userData}>
       <Head>
         <title>Page title</title>
         <meta
@@ -29,6 +32,6 @@ export default function App(props: AppProps) {
           <Component {...pageProps} />
         </NotificationsProvider>
       </MantineProvider>
-    </>
+    </UserContext.Provider>
   );
 }
