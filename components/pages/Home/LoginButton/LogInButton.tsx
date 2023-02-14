@@ -4,7 +4,7 @@ import { googleSignIn } from './LogInButton.logic';
 import { useTranslation } from 'utils/hooks';
 
 export const LogInButton: FC = () => {
-  const { t } = useTranslation();
+  const [t] = useTranslation();
 
   return <Button onClick={googleSignIn}>{t('buttonLabel.logIn')}</Button>;
 };

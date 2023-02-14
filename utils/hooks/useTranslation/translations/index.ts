@@ -1,4 +1,10 @@
-/* eslint-disable import/no-anonymous-default-export */
-import en from './en.json';
+import enTranslations from './en.json';
+import plTranslations from './pl.json';
+import { TranslationObject } from '../types';
 
-export default { en };
+const translations: TranslationObject = {
+  en: enTranslations,
+  pl: plTranslations,
+};
+
+export default translations;

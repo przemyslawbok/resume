@@ -1,3 +1,3 @@
-import useTranslation from './useTranslation';
+import { useTranslation } from './useTranslation';
 
 export { useTranslation };
