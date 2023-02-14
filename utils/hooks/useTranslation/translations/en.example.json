@@ -1,0 +1,34 @@
+{
+  "buttonLabel": {
+    "save": "Save",
+    "edit": "Edit",
+    "reset": "Reset",
+    "show": "Show",
+    "apply": "Apply",
+    "close": "Close"
+  },
+  "commonLabel": {
+    "in": "In",
+    "out": "Out",
+    "on": "On",
+    "off": "Off",
+    "of": "of"
+  },
+  "admin": {
+    "title": "Admin Page"
+  },
+  "person": {
+    "edit": {
+      "createPersonRequiredLabel": "Required for creation",
+      "activatePersonRequiredLabel": "Required for activation",
+      "generalInformation": "General information",
+      "roles": "Roles",
+      "missingRoleErrorMessage": "Please select at least one option for roles",
+      "invalidFormErrorMessage": "Please fill required fields",
+      "escalationContactMissingNumberErrorMessage": "Person must have a Contact Number to be marked as Escalation Contact",
+      "profileSavedSuffix": "profile saved.",
+      "profileActivatedSuffix": "profile activated.",
+      "invalidEscalationContactRoleRemovalMessage": "cannot be unset as an escalation contact because they are assigned to the following escalation plans:"
+    }
+  }
+}

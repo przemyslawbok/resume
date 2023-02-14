@@ -1,7 +1,10 @@
 import { Button } from '@mantine/core';
 import { FC } from 'react';
 import { googleSignIn } from './LogInButton.logic';
+import { useTranslation } from 'utils/hooks';
 
-export const LogInButton: FC = () => (
-  <Button onClick={googleSignIn}>Log In</Button>
-);
+export const LogInButton: FC = () => {
+  const [t] = useTranslation();
+
+  return <Button onClick={googleSignIn}>{t('buttonLabel.logIn')}</Button>;
+};
