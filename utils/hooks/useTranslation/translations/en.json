@@ -1,6 +1,7 @@
 {
   "buttonLabel": {
-    "logIn": "Log In"
+    "logIn": "Log In",
+    "logOut": "Log Out"
   },
   "admin": {
     "title": "Admin Page"
