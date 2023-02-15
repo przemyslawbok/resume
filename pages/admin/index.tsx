@@ -1,5 +1,5 @@
 import { UserContext } from 'utils/contexts/UserContext';
-import { UserProfile } from 'components/UserProfile';
+import { UserProfile } from 'components';
 import { useContext } from 'react';
 
 const AdminPage = () => {
