@@ -1,4 +1,4 @@
 import { Loader } from './Loader';
-import { LogInButton, Wrapper } from './pages';
+import { UserProfile } from './UserProfile';
 
-export { Loader, LogInButton, Wrapper };
+export { Loader, UserProfile };

@@ -3,8 +3,8 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
-import { UserContext } from 'utils/contexts/UserContext';
-import { useUserData } from 'utils/hooks/useUserData';
+import { UserContext } from 'utils/contexts';
+import { useUserData } from 'utils/hooks';
 
 export default function App(props: AppProps) {
   const userData = useUserData();

@@ -9,6 +9,7 @@
         "ignoreMemberSort": false,
         "memberSyntaxSortOrder": ["all", "single", "multiple", "none"]
       }
-    ]
+    ],
+    "import/order": 0
   }
 }
