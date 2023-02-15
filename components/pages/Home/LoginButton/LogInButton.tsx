@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { Routes } from 'common/routes';
 import { auth, googleAuthProvider } from 'utils/firebase/firebase';
 import { useRouter } from 'next/dist/client/router';
+import { LoginIcon } from 'components/svgs/LoginIcon';
 
 export const LogInButton: FC = () => {
   const router = useRouter();
@@ -20,5 +21,9 @@ export const LogInButton: FC = () => {
     }
   };
 
-  return <Button onClick={onClick}>Log In</Button>;
+  return (
+    <Button onClick={onClick} leftIcon={<LoginIcon fill={'white'} />}>
+      Log In
+    </Button>
+  );
 };

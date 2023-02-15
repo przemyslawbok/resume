@@ -1,0 +1,1 @@
+export { default as CvIcon } from './CvIcon'
