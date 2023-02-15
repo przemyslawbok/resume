@@ -1,1 +1,2 @@
-export { default as DoneIcon } from './DoneIcon'
+import DoneIcon from './DoneIcon'
+export { DoneIcon }

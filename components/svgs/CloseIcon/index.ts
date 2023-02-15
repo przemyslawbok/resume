@@ -1,1 +1,2 @@
-export { default as CloseIcon } from './CloseIcon'
+import CloseIcon from './CloseIcon';
+export { CloseIcon }

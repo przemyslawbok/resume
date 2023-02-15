@@ -1,1 +1,2 @@
-export { default as CvIcon } from './CvIcon'
+import CvIcon from './CvIcon'
+export { CvIcon }

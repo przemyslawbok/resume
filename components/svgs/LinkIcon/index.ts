@@ -1,1 +1,2 @@
-export { default as LinkIcon } from './LinkIcon'
+import LinkIcon from './LinkIcon'
+export { LinkIcon }

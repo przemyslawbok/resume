@@ -1,1 +1,2 @@
-export { default as LogoutIcon } from './LogoutIcon'
+import LogoutIcon from './LogoutIcon'
+export { LogoutIcon }

@@ -1,1 +1,2 @@
-export { default as EditIcon } from './EditIcon'
+import EditIcon from './EditIcon'
+export { EditIcon }

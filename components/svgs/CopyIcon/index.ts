@@ -1,1 +1,2 @@
-export { default as CopyIcon } from './CopyIcon'
+import CopyIcon from './CopyIcon'
+export { CopyIcon }
