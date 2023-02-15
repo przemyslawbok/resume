@@ -1,4 +1,5 @@
 import { UserContext } from 'utils/contexts/UserContext';
+import { UserProfile } from 'components/UserProfile';
 import { useContext } from 'react';
 
 const AdminPage = () => {
@@ -7,6 +8,7 @@ const AdminPage = () => {
   return (
     <main>
       <h1>{email}</h1>
+      <UserProfile />
     </main>
   );
 };
