@@ -1,3 +1,4 @@
 import { Loader } from './Loader';
+import { UserProfile } from './UserProfile';
 
-export { Loader };
+export { Loader, UserProfile };
