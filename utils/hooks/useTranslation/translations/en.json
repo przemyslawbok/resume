@@ -5,6 +5,10 @@
   },
   "admin": {
     "title": "Admin Page"
+  },
+  "navBar": {
+    "admin": "Admin",
+    "resume": "Resume"
   }
 }
 

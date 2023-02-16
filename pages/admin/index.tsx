@@ -1,5 +1,5 @@
+import { NavBar } from 'components';
 import { UserContext } from 'utils/contexts/UserContext';
-import { UserProfile } from 'components';
 import { useContext } from 'react';
 
 const AdminPage = () => {
@@ -7,8 +7,7 @@ const AdminPage = () => {
 
   return (
     <main>
-      <h1>{email}</h1>
-      <UserProfile />
+      <NavBar />
     </main>
   );
 };
