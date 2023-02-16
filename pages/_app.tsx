@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { UserContext } from 'utils/contexts';
+import { theme } from 'common/theme';
 import { useUserData } from 'utils/hooks';
 
 export default function App(props: AppProps) {
@@ -20,35 +21,7 @@ export default function App(props: AppProps) {
         />
       </Head>
 
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          fontFamily: 'Open Sans, sans-serif',
-          colorScheme: 'light',
-          fontSizes: {
-            xs: 12,
-            sm: 14,
-            md: 16,
-            lg: 18,
-            xl: 20,
-          },
-          components: {
-            Button: {
-              defaultProps: {
-                color: 'dark',
-                size: 'xl',
-                radius: 'md',
-                variants: {
-                  outline: {
-                    color: 'white',
-                  },
-                },
-              },
-            },
-          },
-        }}
-      >
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
         <NotificationsProvider>
           <Component {...pageProps} />
         </NotificationsProvider>
