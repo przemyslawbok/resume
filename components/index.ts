@@ -6,10 +6,11 @@ import {
   EditIcon,
   LinkIcon,
   LoginIcon,
+  Logo,
   LogoutIcon,
 } from './svgs';
 import { Loader } from './Loader';
-import { NavBar } from './NavBar';
+import { PageHeader } from './PageHeader';
 import { UserProfile } from './UserProfile';
 
 export {
@@ -23,5 +24,6 @@ export {
   EditIcon,
   LinkIcon,
   LogoutIcon,
-  NavBar,
+  Logo,
+  PageHeader,
 };

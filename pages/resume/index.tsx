@@ -1,9 +1,9 @@
 import { PageHeader } from 'components';
 
-const AdminPage = () => (
+const ResumePage = () => (
   <main>
     <PageHeader />
   </main>
 );
 
-export default AdminPage;
+export default ResumePage;
