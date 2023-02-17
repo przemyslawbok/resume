@@ -14,10 +14,9 @@ import { theme } from 'common/theme';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'utils/hooks';
 
-const HEADER_HEIGHT = 60;
-
 export function PageHeader() {
   const [t] = useTranslation();
+  // getLinks(t)
   const links = [
     {
       link: Routes.Admin,
