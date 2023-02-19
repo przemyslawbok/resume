@@ -1,10 +1,13 @@
-const getLinks = (t) => [
-  {
-    link: Routes.Admin,
-    label: t('navBar.admin'),
-  },
-  {
-    link: Routes.Resume,
-    label: t('navBar.resume'),
-  },
+import { Routes } from 'common/routes';
+
+export const getLinks = (t) => [
+  // Example of how to add a new link to the header
+  // {
+  //   link: Routes.Admin,
+  //   label: t('header.admin'),
+  // },
+  // {
+  //   link: Routes.Resume,
+  //   label: t('header.resume'),
+  // },
 ];

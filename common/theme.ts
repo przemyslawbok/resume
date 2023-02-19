@@ -1,7 +1,6 @@
-import { MantineThemeOverride, mantineTheme } from '@mantine/core';
+import { MantineThemeOverride } from '@mantine/core';
 
 export const theme: MantineThemeOverride = {
-  ...mantineTheme,
   fontFamily: 'Open Sans, sans-serif',
   colorScheme: 'light',
   fontSizes: {
@@ -24,11 +23,11 @@ export const theme: MantineThemeOverride = {
         },
       },
     },
-    Headers: {
-      defaultProps: {},
-    },
-    Text: {
-      defaultProps: {},
-    },
+    // Header: {
+    //   defaultProps: {
+    //     zIndex: 1,
+    //     position: 'relative',
+    //   },
+    // },
   },
 };

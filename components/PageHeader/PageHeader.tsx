@@ -7,26 +7,18 @@ import {
   Text,
   createStyles,
 } from '@mantine/core';
+import { HEADER_HEIGHT } from './PageHeader.data';
 import { Logo } from 'components';
 import { Routes } from 'common/routes';
 import { UserProfile } from 'components/UserProfile';
+import { getLinks } from './PageHeader.logic';
 import { theme } from 'common/theme';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'utils/hooks';
 
 export function PageHeader() {
   const [t] = useTranslation();
-  // getLinks(t)
-  const links = [
-    {
-      link: Routes.Admin,
-      label: t('navBar.admin'),
-    },
-    {
-      link: Routes.Resume,
-      label: t('navBar.resume'),
-    },
-  ];
+  const links = getLinks(t);
 
   const useStyles = createStyles((useTheme) => ({
     root: {
@@ -91,12 +83,7 @@ export function PageHeader() {
 
   return (
     <MantineProvider theme={theme}>
-      <Header
-        height={60}
-        sx={{ borderBottom: 0 }}
-        mb={120}
-        className={classes.root}
-      >
+      <Header height={HEADER_HEIGHT} className={classes.root}>
         <Container fluid className={classes.header}>
           <Group>
             <Link href={Routes.Home}>

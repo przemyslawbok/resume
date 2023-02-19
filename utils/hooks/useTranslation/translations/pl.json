@@ -6,7 +6,7 @@
   "admin": {
     "title": "Strona Admin"
   },
-  "navBar": {
+  "header": {
     "admin": "Admin",
     "resume": "CV"
   }
