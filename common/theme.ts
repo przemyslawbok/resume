@@ -23,11 +23,5 @@ export const theme: MantineThemeOverride = {
         },
       },
     },
-    // Header: {
-    //   defaultProps: {
-    //     zIndex: 1,
-    //     position: 'relative',
-    //   },
-    // },
   },
 };
