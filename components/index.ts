@@ -1,5 +1,27 @@
+import { BackButton } from './BackButton';
+import {
+  CloseIcon,
+  CopyIcon,
+  CvIcon,
+  DoneIcon,
+  EditIcon,
+  LinkIcon,
+  LoginIcon,
+  LogoutIcon,
+} from './svgs';
 import { Loader } from './Loader';
 import { UserProfile } from './UserProfile';
-import { LoginIcon, CloseIcon, CopyIcon, CvIcon, DoneIcon, EditIcon, LinkIcon, LogoutIcon } from './svgs';
 
-export { Loader, UserProfile, LoginIcon, CloseIcon, CopyIcon, CvIcon, DoneIcon, EditIcon, LinkIcon, LogoutIcon };
+export {
+  Loader,
+  UserProfile,
+  LoginIcon,
+  CloseIcon,
+  CopyIcon,
+  CvIcon,
+  DoneIcon,
+  EditIcon,
+  LinkIcon,
+  LogoutIcon,
+  BackButton,
+};
