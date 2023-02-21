@@ -17,19 +17,21 @@ export const HeaderContent = styled(Container)`
 export const HeaderText = styled(Text)<HighlightedProps>`
   border-radius: 5px;
   ${(props) => (props.$highlighted ? 'background-color: #e2f0ff' : '')};
-  a {
-    display: block;
-    line-height: 1;
-    padding: 8px 12px;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-    min-width: 75px;
-    text-align: center;
-    color: #495057;
-    &:hover {
-      background-color: #f5f5f5;
-      color: #212529;
-    }
+`;
+
+export const HeaderLink = styled.a`
+  display: block;
+  line-height: 1;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 75px;
+  text-align: center;
+  color: #495057;
+
+  &:hover {
+    background-color: #f5f5f5;
+    color: #212529;
   }
 `;
