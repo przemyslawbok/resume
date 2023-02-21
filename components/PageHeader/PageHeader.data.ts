@@ -7,6 +7,6 @@ export type LinkData = {
   label: string;
 };
 
-export type HighlightedProps = Omit<TextProps, 'isActive'> & {
+export type HighlightedProps = TextProps & {
   $highlighted?: boolean;
 };
