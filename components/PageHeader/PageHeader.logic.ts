@@ -1,7 +1,8 @@
+import { LinkData } from './PageHeader.data';
 import { Routes } from 'common/routes';
+import { TranslationFunction } from 'utils/hooks';
 
-export const getLinks = (t) => [
-  // Example of how to add a new link to the header
+export const getLinks = (t: TranslationFunction): LinkData[] => [
   {
     link: Routes.Admin,
     label: t('header.admin'),

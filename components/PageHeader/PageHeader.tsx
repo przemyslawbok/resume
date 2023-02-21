@@ -1,8 +1,13 @@
 import Link from 'next/link';
-import { Container, Group, Header, Text } from '@mantine/core';
+import { Group } from '@mantine/core';
 import { HEADER_HEIGHT } from './PageHeader.data';
+import {
+  HeaderContent,
+  HeaderLink,
+  HeaderText,
+  StyledHeader,
+} from './PageHeader.styling';
 import { Logo } from 'components';
-import { PageHeaderStyles } from './PageHeader.styling';
 import { Routes } from 'common/routes';
 import { UserProfile } from 'components/UserProfile';
 import { getLinks } from './PageHeader.logic';
@@ -15,26 +20,23 @@ export function PageHeader() {
 
   const activeLink = useRouter().pathname;
   const items = links.map((link) => (
-    <Text key={link.link} className={link.link === activeLink ? 'active' : ''}>
-      <Link href={link.link}>{link.label}</Link>
-    </Text>
+    <HeaderText key={link.link} isActive={link.link === activeLink}>
+      <HeaderLink href={link.link}>{link.label}</HeaderLink>
+    </HeaderText>
   ));
 
   return (
-    <PageHeaderStyles>
-      <Header height={HEADER_HEIGHT}>
-        <Container fluid className="header-content">
-          <Group>
-            <Link href={Routes.Home}>
-              <Logo />
-            </Link>
-          </Group>
-          <Group spacing={5} className="nav-links">
-            {items}
-          </Group>
-          <UserProfile />
-        </Container>
-      </Header>
-    </PageHeaderStyles>
+    <StyledHeader height={HEADER_HEIGHT}>
+      <HeaderContent fluid>
+        <Group>
+          <Link href={Routes.Home}>
+            LOGO
+            {/* <Logo /> */}
+          </Link>
+        </Group>
+        <Group spacing={5}>{items}</Group>
+        <UserProfile />
+      </HeaderContent>
+    </StyledHeader>
   );
 }
