@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import styled from '@emotion/styled';
-import { ActiveProps, HEADER_HEIGHT } from './PageHeader.data';
+import styled from 'styled-components';
 import { Container, Header, Text } from '@mantine/core';
+import { HEADER_HEIGHT, HighlightedProps } from './PageHeader.data';
 
 export const StyledHeader = styled(Header)`
   position: relative;
@@ -15,9 +15,9 @@ export const HeaderContent = styled(Container)`
   align-items: center;
 `;
 
-export const HeaderText = styled(Text)<ActiveProps>`
+export const HeaderText = styled(Text)<HighlightedProps>`
   border-radius: 5px;
-  ${(props) => (props.isActive ? 'background-color: red' : '')};
+  ${(props) => (props.$highlighted ? 'background-color: #e2f0ff' : '')};
 `;
 
 export const HeaderLink = styled(Link)`
