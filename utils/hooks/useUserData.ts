@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { auth, firestore } from 'utils/firebase';
+import { auth } from 'utils/firebase';
+import { db } from 'db';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useEffect, useState } from 'react';
 
@@ -15,9 +17,10 @@ export const useUserData = () => {
     if (user) {
       try {
         // TODO: add typing, extract to function
-        const ref = firestore.collection('users').doc(user.uid);
+        const ref = db.users.doc(user.uid);
         unsubscribe = ref.onSnapshot((doc) => {
-          setEmail(doc.data()?.email);
+          const docEmail = doc.data()?.email;
+          if (docEmail) setEmail(docEmail);
         });
       } catch (e) {
         console.log(

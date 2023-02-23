@@ -1,5 +1,5 @@
 import firebase from 'firebase/app';
-import { User } from './model';
+import { User, UserResume } from './model';
 import { firestore } from 'utils/firebase';
 import 'firebase/firestore';
 
@@ -18,5 +18,7 @@ export const dataPoint = <T>(collectionPath: string) =>
 
 export const db = {
   users: dataPoint<User>('users'),
-  // userResumes: (userId: string) =>
+  user: (userId: string) => dataPoint<User>(`users/${userId}`),
+  userResumes: (userId: string) =>
+    dataPoint<UserResume>(`users/${userId}/resumes`),
 };

@@ -1,3 +1,4 @@
 import { User } from './User';
+import { UserResume } from './UserResume';
 
-export type { User };
+export type { User, UserResume };
