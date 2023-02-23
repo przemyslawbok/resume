@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { UserContext } from 'utils/contexts';
+import { theme } from 'common/theme';
 import { useUserData } from 'utils/hooks';
 
 export default function App(props: AppProps) {
@@ -20,14 +21,7 @@ export default function App(props: AppProps) {
         />
       </Head>
 
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          /** Put your mantine theme override here */
-          colorScheme: 'light',
-        }}
-      >
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
         <NotificationsProvider>
           <Component {...pageProps} />
         </NotificationsProvider>
