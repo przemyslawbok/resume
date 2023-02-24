@@ -7,12 +7,15 @@ import { useContext } from 'react';
 import { useTranslation } from 'utils/hooks';
 
 export const UserProfile = () => {
-  const { email } = useContext(UserContext);
   const [t] = useTranslation();
+  const { userProfile } = useContext(UserContext);
+
   return (
     <Grid>
       <Grid.Col span={6}>
-        <Link href={Routes.UserProfile}>{email}</Link>
+        {userProfile && (
+          <Link href={Routes.UserProfile}>{userProfile?.email}</Link>
+        )}
       </Grid.Col>
       <Grid.Col span={6}>
         <Button onClick={() => auth.signOut()}>

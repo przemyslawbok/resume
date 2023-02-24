@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react';
 
 export const useUserData = () => {
   const [user] = useAuthState(auth);
-  const [email, setEmail] = useState('');
   const [userProfile, setUserProfile] = useState<User | undefined>();
 
   useEffect(() => {
@@ -18,15 +17,19 @@ export const useUserData = () => {
 
     if (user) {
       try {
-        // TODO: add typing, extract to function
+        // get document ref
         const ref = db.user(user.uid);
+
+        // try to fetch data for userProfile
         unsubscribe = ref.onSnapshot((doc) => {
-          const data: User = { id: user.uid, ...doc.data() };
-          if (data) setUserProfile(data);
-          // to remove
-          const docEmail = doc.data()?.email;
-          if (docEmail) setEmail(docEmail);
+          if (doc.data()) {
+            const data: User = { id: user.uid, ...doc.data() };
+            setUserProfile(data);
+          }
         });
+
+        // if not found, create user profile
+        if (!userProfile) ref.set({ email: user.email });
       } catch (e) {
         console.log(
           '%c 😜: useUserData -> e ',
@@ -35,11 +38,11 @@ export const useUserData = () => {
         );
       }
     } else {
-      setEmail('');
+      setUserProfile(undefined);
     }
 
     return unsubscribe;
   }, [user]);
 
-  return { user, userProfile, email };
+  return { user, userProfile };
 };
