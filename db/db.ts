@@ -3,9 +3,7 @@ import { User, UserResume } from './model';
 import { firestore } from 'utils/firebase';
 import 'firebase/firestore';
 
-export const converter = <
-  T
->(): firebase.firestore.FirestoreDataConverter<T> => ({
+const converter = <T>(): firebase.firestore.FirestoreDataConverter<T> => ({
   toFirestore: (data: T): firebase.firestore.DocumentData =>
     data as firebase.firestore.DocumentData,
   fromFirestore: (
@@ -13,7 +11,7 @@ export const converter = <
   ): T => snapshot.data() as T,
 });
 
-export const dataPoint = <T>(collectionPath: string) =>
+const dataPoint = <T>(collectionPath: string) =>
   firestore.collection(collectionPath).withConverter(converter<T>());
 
 export const db = {
