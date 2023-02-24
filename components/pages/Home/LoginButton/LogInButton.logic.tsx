@@ -1,4 +1,5 @@
 import router from 'next/dist/client/router';
+import toast from 'react-hot-toast';
 import { Routes } from 'common/routes';
 import { auth, googleAuthProvider } from 'utils/firebase';
 
@@ -7,10 +8,7 @@ export const googleSignIn = async () => {
     await auth.signInWithPopup(googleAuthProvider);
     router.push(Routes.Admin);
   } catch (e) {
-    console.log(
-      '%c 👁️: onClick -> e ',
-      'font-size:16px;background-color:#e3f329;color:black;',
-      e
-    );
+    // TODO: translate this
+    toast.error('Something went wrong while logging in');
   }
 };

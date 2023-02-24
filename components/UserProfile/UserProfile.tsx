@@ -33,7 +33,7 @@ const useStyles = createStyles((useTheme) => ({
 }));
 
 export const UserProfile = () => {
-  const { email } = useContext(UserContext);
+  const { userProfile } = useContext(UserContext);
   const [t] = useTranslation();
   const { classes } = useStyles();
 
@@ -47,9 +47,11 @@ export const UserProfile = () => {
       wrap="wrap"
     >
       <Group>
-        <Link href={Routes.UserProfile}>
-          <Text className={classes.profileLink}>{email}</Text>
-        </Link>
+        {userProfile && (
+          <Link href={Routes.UserProfile}>
+            <Text className={classes.profileLink}>{userProfile?.email}</Text>
+          </Link>
+        )}
       </Group>
       <Group>
         <Button onClick={() => auth.signOut()} size="sm">

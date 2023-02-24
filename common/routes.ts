@@ -1,6 +1,9 @@
-export const Routes = {
-  Home: '/',
-  Admin: '/admin',
-  UserProfile: '/userProfile',
-  Resume: '/resume',
-};
+export enum Routes {
+  // public
+  Home = '/',
+  Resume = '/resume',
+
+  // restricted
+  Admin = '/admin',
+  UserProfile = '/userProfile',
+}
