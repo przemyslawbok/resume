@@ -1,4 +1,5 @@
 import { FC, ReactNode, useContext, useEffect, useState } from 'react';
+import { PublicRoutes } from 'common/publicRoutes';
 import { Routes } from 'common/routes';
 import { UserContext } from 'utils/contexts';
 import { useRouter } from 'next/router';
@@ -13,11 +14,23 @@ const RouteGuard: FC<RouteGuardProps> = ({ children }) => {
   const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
-    // on initial load - run auth check
+    const authCheck = (url: string): void => {
+      const path = url.split('/')[1];
+      const pathWithSlash = `/${path}`;
+
+      if ((user && user.uid) || PublicRoutes.includes(pathWithSlash)) {
+        setAuthorized(true);
+      } else {
+        setAuthorized(false);
+        router.push(Routes.Home);
+      }
+    };
+
     authCheck(router.asPath);
 
     // on route change start - hide page content by setting authorized to false
-    const hideContent = () => setAuthorized(false);
+    const hideContent = (): void => setAuthorized(false);
+
     router.events.on('routeChangeStart', hideContent);
 
     // on route change complete - run auth check
@@ -28,21 +41,7 @@ const RouteGuard: FC<RouteGuardProps> = ({ children }) => {
       router.events.off('routeChangeStart', hideContent);
       router.events.off('routeChangeComplete', authCheck);
     };
-  });
-
-  function authCheck(url: string) {
-    // redirect to login page if accessing a private page and not logged in
-    const publicPaths = [Routes.Home.toString(), Routes.Resume.toString()];
-    const path = url.split('/')[1];
-    const pathWithSlash = `/${path}`;
-
-    if ((user && user.uid) || publicPaths.includes(pathWithSlash)) {
-      setAuthorized(true);
-    } else {
-      setAuthorized(false);
-      router.push(Routes.Home);
-    }
-  }
+  }, [router, user]);
 
   // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{authorized && children}</>;

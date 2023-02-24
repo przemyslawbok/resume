@@ -18,7 +18,7 @@ export const dataPoint = <T>(collectionPath: string) =>
 
 export const db = {
   users: dataPoint<User>('users'),
-  user: (userId: string) => dataPoint<User>(`users/${userId}`),
+  user: (userId: string) => dataPoint<User>('users').doc(userId),
   userResumes: (userId: string) =>
     dataPoint<UserResume>(`users/${userId}/resumes`),
 };
