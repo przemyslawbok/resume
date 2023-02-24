@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import toast from 'react-hot-toast';
 import { User } from 'db/model';
 import { auth } from 'utils/firebase';
 import { db } from 'db';
@@ -29,19 +30,34 @@ export const useUserData = () => {
         });
 
         // if not found, create user profile
-        if (!userProfile) ref.set({ email: user.email });
+        if (!userProfile) {
+          const profileData: User = {
+            avatar: user.photoURL,
+            birthday: null,
+            email: user.email,
+            firstName: user.displayName.split(' ')[0],
+            language: '',
+            lastName: user.displayName.split(' ')[1],
+            nickname: '',
+            phone: user.phoneNumber,
+            photoUrl: '',
+            regDate: new Date(user.metadata.lastSignInTime),
+            theme: '',
+          };
+
+          ref.set(profileData);
+        }
       } catch (e) {
-        console.log(
-          '%c 😜: useUserData -> e ',
-          'font-size:16px;background-color:#2e89b9;color:white;',
-          e
-        );
+        // TODO: translate this
+        toast.error('Error fetching from database');
       }
     } else {
       setUserProfile(undefined);
     }
 
     return unsubscribe;
+    // don't want to trigger on userProfile change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return { user, userProfile };
