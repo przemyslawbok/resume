@@ -5,6 +5,10 @@
   },
   "admin": {
     "title": "Admin Page"
+  },
+  "header": {
+    "admin": "Admin",
+    "resume": "Resume"
   }
 }
 

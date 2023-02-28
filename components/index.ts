@@ -1,5 +1,29 @@
+import {
+  CloseIcon,
+  CopyIcon,
+  CvIcon,
+  DoneIcon,
+  EditIcon,
+  LinkIcon,
+  LoginIcon,
+  Logo,
+  LogoutIcon,
+} from './svgs';
 import { Loader } from './Loader';
+import { PageHeader } from './PageHeader';
 import { UserProfile } from './UserProfile';
-import { LoginIcon, CloseIcon, CopyIcon, CvIcon, DoneIcon, EditIcon, LinkIcon, LogoutIcon } from './svgs';
 
-export { Loader, UserProfile, LoginIcon, CloseIcon, CopyIcon, CvIcon, DoneIcon, EditIcon, LinkIcon, LogoutIcon };
+export {
+  Loader,
+  UserProfile,
+  LoginIcon,
+  CloseIcon,
+  CopyIcon,
+  CvIcon,
+  DoneIcon,
+  EditIcon,
+  LinkIcon,
+  LogoutIcon,
+  Logo,
+  PageHeader,
+};
