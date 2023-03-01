@@ -44,9 +44,7 @@ export const useUserData = () => {
       await userRepository.create(profileData);
     };
 
-    const userSocialLinkRepository = new UserSocialLinkRepository(
-      db.userSocialLinks(user.uid)
-    );
+    const userSocialLinkRepository = new UserSocialLinkRepository(user.uid);
 
     const getUserSocialLinks = async () => {
       const result = await userSocialLinkRepository.getAll();
