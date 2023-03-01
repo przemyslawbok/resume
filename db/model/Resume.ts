@@ -1,4 +1,4 @@
-export interface UserResume {
+export interface Resume {
   id?: string;
   about?: string;
   address?: string;
