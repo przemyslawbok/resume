@@ -25,10 +25,12 @@ const dataPoint = <T>(collectionPath: string) =>
 
 export const db = {
   users: dataPoint<User>('users'),
+  // TODO: remove and use UserRepository
   user: (userId: string) => dataPoint<User>('users').doc(userId),
   userResumes: (userId: string) => dataPoint<Resume>(`users/${userId}/resumes`),
   userSocialLinks: (userId: string) =>
     dataPoint<SocialLink>(`users/${userId}/socialLinks`),
+  // TODO: remove and use ResumeRepository
   resume: (resumeId: string) => dataPoint<Resume>('resumes').doc(resumeId),
   resumeEducations: (resumeId: string) =>
     dataPoint<Education>(`resumes/${resumeId}/educations`),

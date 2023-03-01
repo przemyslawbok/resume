@@ -1,5 +1,6 @@
-export interface Education {
-  id?: string;
+import { Entity } from 'common/entity';
+
+export interface Education extends Entity {
   description?: string;
   finishDate?: Date;
   place?: string;

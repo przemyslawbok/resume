@@ -1,5 +1,6 @@
-export interface Resume {
-  id?: string;
+import { Entity } from 'common/entity';
+
+export interface Resume extends Entity {
   about?: string;
   address?: string;
   contactEmail?: string;

@@ -1,5 +1,6 @@
-export interface Reference {
-  id?: string;
+import { Entity } from 'common/entity';
+
+export interface Reference extends Entity {
   company?: string;
   email?: string;
   firstName?: string;
