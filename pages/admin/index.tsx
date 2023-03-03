@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { Routes } from 'common/routes';
 import { SocialLink } from 'db/model';
 import { UserContext } from 'utils/contexts/UserContext';
 import { UserProfile } from 'components';
@@ -17,6 +19,8 @@ const AdminPage = () => {
           ))}
         </ul>
       )}
+      {/* temporary link to Test page */}
+      <Link href={Routes.TestQuery}>Test Query</Link>
     </main>
   );
 };

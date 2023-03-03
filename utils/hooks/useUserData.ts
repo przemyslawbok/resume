@@ -6,7 +6,6 @@ import toast from 'react-hot-toast';
 import { SocialLink, User } from 'db/model';
 import { UserRepository, UserSocialLinkRepository } from 'utils/repositories';
 import { auth } from 'utils/firebase';
-import { db } from 'db';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useEffect, useState } from 'react';
 
@@ -44,16 +43,16 @@ export const useUserData = () => {
       await userRepository.create(profileData);
     };
 
-    const userSocialLinkRepository = new UserSocialLinkRepository(user.uid);
-
-    const getUserSocialLinks = async () => {
-      const result = await userSocialLinkRepository.getAll();
-
-      setSocialLinks(result);
-    };
-
     if (user) {
       try {
+        const userSocialLinkRepository = new UserSocialLinkRepository(user.uid);
+
+        const getUserSocialLinks = async () => {
+          const result = await userSocialLinkRepository.getAll();
+
+          setSocialLinks(result);
+        };
+
         getUserProfile().then((result: boolean) => {
           if (!result) createUserProfile();
           getUserSocialLinks();
