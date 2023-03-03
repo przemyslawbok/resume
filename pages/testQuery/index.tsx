@@ -10,6 +10,8 @@ const TestQueryPage = () => {
   const { user } = useContext(UserContext);
   const [socialLinks, setSocialLinks] = useState<SocialLink[]>();
 
+  // user is already authenticated with RouteGuard
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const userSocialLinksRepository = new UserSocialLinkRepository(user.uid!);
 
   useEffect(() => {
