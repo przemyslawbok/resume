@@ -1,5 +1,6 @@
-export interface User {
-  id?: string;
+import { Entity } from 'common/entity';
+
+export interface User extends Entity {
   avatar?: string;
   birthday?: Date | null;
   email?: string;

@@ -1,5 +1,14 @@
 import firebase from 'firebase/app';
-import { User, UserResume } from './model';
+import {
+  Education,
+  Experience,
+  Language,
+  Reference,
+  Resume,
+  Skill,
+  SocialLink,
+  User,
+} from './model';
 import { firestore } from 'utils/firebase';
 import 'firebase/firestore';
 
@@ -16,7 +25,19 @@ const dataPoint = <T>(collectionPath: string) =>
 
 export const db = {
   users: dataPoint<User>('users'),
-  user: (userId: string) => dataPoint<User>('users').doc(userId),
-  userResumes: (userId: string) =>
-    dataPoint<UserResume>(`users/${userId}/resumes`),
+  userResumes: (userId: string) => dataPoint<Resume>(`users/${userId}/resumes`),
+  userSocialLinks: (userId: string) =>
+    dataPoint<SocialLink>(`users/${userId}/socialLinks`),
+  resumeEducations: (resumeId: string) =>
+    dataPoint<Education>(`resumes/${resumeId}/educations`),
+  resumeExperiences: (resumeId: string) =>
+    dataPoint<Experience>(`resumes/${resumeId}/experiences`),
+  resumeSkills: (resumeId: string) =>
+    dataPoint<Skill>(`resumes/${resumeId}/skills`),
+  resumeLanguages: (resumeId: string) =>
+    dataPoint<Language>(`resumes/${resumeId}/languages`),
+  resumeReferences: (resumeId: string) =>
+    dataPoint<Reference>(`resumes/${resumeId}/references`),
+  resumeSocialLinks: (resumeId: string) =>
+    dataPoint<SocialLink>(`resumes/${resumeId}/socialLinks`),
 };
