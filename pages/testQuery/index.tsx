@@ -3,7 +3,7 @@ import { Button } from '@mantine/core';
 import { Routes } from 'common/routes';
 import { SocialLink } from 'db/model';
 import { UserContext } from 'utils/contexts';
-import { UserSocialLinkRepository } from 'utils/repositories';
+import { UserSocialLinksRepository } from 'utils/repositories';
 import { useContext, useEffect, useState } from 'react';
 
 const TestQueryPage = () => {
@@ -12,7 +12,7 @@ const TestQueryPage = () => {
 
   // user is already authenticated with RouteGuard
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const userSocialLinksRepository = new UserSocialLinkRepository(user.uid!);
+  const userSocialLinksRepository = new UserSocialLinksRepository(user.uid!);
 
   useEffect(() => {
     const getSocialLinks = async () => {

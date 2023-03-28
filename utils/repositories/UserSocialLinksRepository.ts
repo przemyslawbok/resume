@@ -1,7 +1,7 @@
-import { FirestoreSubCollectionRepository } from './FirestoreSubCollectionRepository';
+import { FirestoreSubCollectionRepository } from './base';
 import { SocialLink } from 'db/model';
 import { db } from 'db';
 
-export class UserSocialLinkRepository extends FirestoreSubCollectionRepository<SocialLink> {
+export class UserSocialLinksRepository extends FirestoreSubCollectionRepository<SocialLink> {
   protected readonly collection = db.userSocialLinks;
 }
