@@ -1,4 +1,4 @@
-import { FirestoreRepository } from './FirestoreRepository';
+import { FirestoreRepository } from './base';
 import { User } from 'db/model';
 import { db } from 'db';
 

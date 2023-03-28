@@ -4,7 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import toast from 'react-hot-toast';
 import { SocialLink, User } from 'db/model';
-import { UserRepository, UserSocialLinkRepository } from 'utils/repositories';
+import { UserRepository, UserSocialLinksRepository } from 'utils/repositories';
 import { auth } from 'utils/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useEffect, useState } from 'react';
@@ -45,7 +45,9 @@ export const useUserData = () => {
 
     if (user) {
       try {
-        const userSocialLinkRepository = new UserSocialLinkRepository(user.uid);
+        const userSocialLinkRepository = new UserSocialLinksRepository(
+          user.uid
+        );
 
         const getUserSocialLinks = async () => {
           const result = await userSocialLinkRepository.getAll();
